@@ -4,13 +4,16 @@ from django.db import models
 
 class Registration(models.Model):
     name=models.CharField(max_length=100, blank=False,null=False)
-    rollNo=models.IntegerField(max_length=6, blank=False, null= False)
-    email = models.EmailField(max_length=100, blank= False, null=False)
-    phone = models.IntegerField(max_length=10, blank = False, null = False)
-    branch = models.CharField(max_length=200,blank=False, null = False)
+    rollNo=models.IntegerField(blank=False, null= False, unique=True)
+    email = models.EmailField(max_length=100, blank= False, null=False, unique=True)
+    phone = models.IntegerField(blank = False, null = False)
+    branch = models.CharField(max_length=100,blank=False, null = False)
+    role= models.CharField(max_length=100,blank=True, null=True)
 
     def __str__(self):
-        return f'{self.name} Email: {self.email}'
+        return f'{self.name} ({self.email})'
+
+
 
 
     

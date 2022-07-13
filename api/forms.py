@@ -14,5 +14,6 @@ class RegistrationForm(forms.ModelForm):
             'rollNo': forms.TextInput(),
             'email': forms.TextInput(),
             'phone':forms.TextInput(),
-            'branch': forms.TextInput()
+            'branch': forms.TextInput(),
+            'isPaymentDone': forms.BooleanField()
         }
