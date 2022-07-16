@@ -9,7 +9,8 @@ class Registration(models.Model):
     phone = models.IntegerField(blank = False, null = False)
     branch = models.CharField(max_length=100,blank=False, null = False)
     role= models.CharField(max_length=100,blank=True, null=True)
-
+    year = models.CharField(max_length=100,blank=True, null=True)
+    link =models.CharField(max_length=100,blank=True, null=True)
     def __str__(self):
         return f'{self.name} ({self.email})'
 
